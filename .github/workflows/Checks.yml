@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "*" ]
   pull_request:
-    branches: [ "master", "beta" ]
+    branches: [ "master" ]
 
 jobs:
   Ubuntu:
@@ -13,10 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Turbo
+      run: npm install turbo --global
     - name: Install
       run: yarn install
     - name: Build
-      run: yarn run build
+      run: turbo build
 
   Windows:
 
@@ -24,7 +26,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Turbo
+      run: npm install turbo --global
     - name: Install
       run: yarn install
     - name: Build
-      run: yarn run build
+      run: turbo build
