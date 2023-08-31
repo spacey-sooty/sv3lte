@@ -1,4 +1,5 @@
 @import 'pages/index.module.scss';
+@import 'abstracts/index.module.scss';
 
 :root {
   color: black;
@@ -7,5 +8,6 @@
 
   h1, h2 {
     text-align: center;
+    font-family: "Moonbeam Regular";
   }
 }
